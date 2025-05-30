@@ -267,7 +267,7 @@ export const transformPreview = (
     'vitepress-demo-plugin',
     `{ VitepressDemoBox, VitepressDemoPlaceholder }`
   );
-  injectComponentImportScript(mdFile, 'vitepress-demo-plugin/dist/style.css');
+  injectComponentImportScript(mdFile, 'plugin/dist/style.css');
   injectComponentImportScript(mdFile, 'vue', '{ ref, onMounted }');
 
   // 注入组件导入语句
