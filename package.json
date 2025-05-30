@@ -1,0 +1,7 @@
+{
+  "name": "vitepress-demo",
+  "version": "1.0.0",
+  "private": "true",
+  "license": "MIT",
+  "packageManager": "pnpm@9.15.9"
+}
