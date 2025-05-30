@@ -1,5 +1,5 @@
 import { defineConfig } from 'vitepress';
-import { vitepressDemoPlugin } from 'vitepress-demo-plugin';
+import { vitepressDemoPlugin } from 'plugin';
 import path, { dirname } from 'path';
 import { codeInspectorPlugin } from 'code-inspector-plugin';
 
