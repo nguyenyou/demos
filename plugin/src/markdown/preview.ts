@@ -264,7 +264,7 @@ export const transformPreview = (
   // 注入 vitepress-demo-plugin 组件和样式
   injectComponentImportScript(
     mdFile,
-    'vitepress-demo-plugin',
+    'plugin',
     `{ VitepressDemoBox, VitepressDemoPlaceholder }`
   );
   injectComponentImportScript(mdFile, 'plugin/dist/style.css');
