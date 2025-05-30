@@ -25,6 +25,7 @@ app.mount("#app");`;
 
 // https://vitepress.dev/reference/site-config
 export default defineConfig({
+  base: process.env.PAGES_BASE_PATH || '/',
   title: 'Vitepress Demo Plugin',
   description: 'The docs of vitepress-demo-plugin',
   themeConfig: {

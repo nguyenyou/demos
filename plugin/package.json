@@ -1,25 +1,6 @@
 {
-  "name": "vitepress-demo-plugin",
-  "version": "1.4.4",
-  "description": "A vitepress plugin to preview component and display code",
-  "keywords": [
-    "vitepress",
-    "plugin",
-    "code",
-    "demo",
-    "block",
-    "preview",
-    "component",
-    "display"
-  ],
-  "homepage": "https://vitepress-demo.fe-dev.cn/",
-  "bugs": "https://github.com/zh-lx/vitepress-demo-plugin/issues",
-  "repository": {
-    "type": "git",
-    "url": "git@github.com:zh-lx/vitepress-demo-plugin.git"
-  },
+  "name": "plugin",
   "license": "MIT",
-  "author": "zh-lx",
   "type": "module",
   "exports": {
     ".": {

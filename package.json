@@ -3,5 +3,11 @@
   "version": "1.0.0",
   "private": "true",
   "license": "MIT",
+  "scripts": {
+    "docs:dev": "pnpm --filter docs dev",
+    "docs:build": "pnpm --filter docs build",
+    "docs:preview": "pnpm --filter docs preview",
+    "build:plugin": "pnpm --filter plugin build"
+  },
   "packageManager": "pnpm@9.15.9"
 }

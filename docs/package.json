@@ -1,8 +1,9 @@
 {
+  "name": "docs",
   "scripts": {
-    "docs:dev": "vitepress dev",
-    "docs:build": "vitepress build",
-    "docs:preview": "vitepress preview"
+    "dev": "vitepress dev",
+    "build": "vitepress build",
+    "preview": "vitepress preview"
   },
   "devDependencies": {
     "@emotion/styled": "^11.13.0",
@@ -15,6 +16,6 @@
     "react": "^18.3.1",
     "react-dom": "^18.3.1",
     "vitepress": "^1.6.3",
-    "vitepress-demo-plugin": "workspace:^"
+    "plugin": "workspace:^"
   }
 }
