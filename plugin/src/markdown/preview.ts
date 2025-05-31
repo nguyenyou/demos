@@ -35,17 +35,14 @@ export interface DefaultProps {
 
 export interface TabConfig {
   /**
-   * @cn 代码切换 tab 的展示顺序
    * @en The order of the code switch tab
    */
   order?: string;
   /**
-   * @cn 是否显示 tab
    * @en Whether to show the tab
    */
   visible?: boolean;
   /**
-   * @cn 默认选中的 tab
    * @en The default selected tab
    */
   select?: string;
@@ -62,69 +59,56 @@ export type CodeFiles = string[] | Record<string, string>;
 
 export interface VitepressDemoBoxConfig {
   /**
-   * @cn demo所在目录
    * @en The directory of the demo
    */
   demoDir?: string;
   /**
-   * @cn 代码切换 tab 的配置
    * @en The configuration of the code switch tab
    */
   tab?: TabConfig;
   /**
-   * @cn stackblitz 平台配置
    * @en The configuration of the stackblitz platform
    */
   stackblitz?: Platform;
   /**
-   * @cn codesandbox 平台配置
    * @en The configuration of the codesandbox platform
    */
   codesandbox?: Platform;
   /**
-   * @cn codeplayer 平台配置
    * @en The configuration of the codeplayer platform
    */
   codeplayer?: Platform;
   /**
-   * @cn vue 展示的代码文件
    * @en The code files of the vue
    */
   vueFiles?: CodeFiles;
   /**
-   * @cn react 展示的代码文件
    * @en The code files of the react
    */
   reactFiles?: CodeFiles;
   /**
-   * @cn html 展示的代码文件
    * @en The code files of the html
    */
   htmlFiles?: CodeFiles;
   /**
-   * @cn 亮色模式主题，参考 https://shiki.style/themes#bundled-themes
    * @en The light theme, reference https://shiki.style/themes#bundled-themes
    */
   lightTheme?: string;
   /**
-   * @cn 暗色模式主题，参考 https://shiki.style/themes#bundled-themes
    * @en The dark theme, reference https://shiki.style/themes#bundled-themes
    */
   darkTheme?: string;
   /**
-   * @cn 亮色/暗色模式统一的主题(建议使用 lightTheme 和 darkTheme 分开)，参考 https://shiki.style/themes#bundled-themes
    * @en The light/dark theme, reference https://shiki.style/themes#bundled-themes
    */
   theme?: string;
   /**
-   * @cn 国际化配置 'zh-CN' | 'en-US'
    * @en The locale configuration 'zh-CN' | 'en-US'
    */
   locale?: Locale;
 }
 
 /**
- * 编译预览组件
  * @param md
  * @param token
  * @param mdFile
@@ -158,7 +142,6 @@ export const transformPreview = (
     react: '',
   };
 
-  // 获取Props相关参数
   const titleValue = token.content.match(titleRegex);
   const vuePathRegexValue = token.content.match(vuePathRegex);
   const htmlPathRegexValue = token.content.match(htmlPathRegex);
@@ -249,7 +232,6 @@ export const transformPreview = (
         .replace(/\\/g, '/')
     : '';
 
-  // 组件名
   // eslint-disable-next-line prefer-destructuring
   const absolutePath = path
     .resolve(
@@ -261,7 +243,6 @@ export const transformPreview = (
   const componentName = composeComponentName(absolutePath);
   const reactComponentName = `react${componentName}`;
 
-  // 注入 vitepress-demo-plugin 组件和样式
   injectComponentImportScript(
     mdFile,
     'plugin',
@@ -270,7 +251,6 @@ export const transformPreview = (
   injectComponentImportScript(mdFile, 'plugin/dist/style.css');
   injectComponentImportScript(mdFile, 'vue', '{ ref, onMounted }');
 
-  // 注入组件导入语句
   if (componentProps.vue) {
     injectComponentImportScript(
       mdFile,
@@ -300,7 +280,6 @@ export const transformPreview = (
 
   const placeholderVisibleKey = `__placeholder_visible_key__`;
 
-  // 控制 placeholder 的显示
   injectComponentImportScript(
     mdFile,
     placeholderVisibleKey,
@@ -308,7 +287,6 @@ export const transformPreview = (
     'inject'
   );
 
-  // 组件代码，动态引入以便实时更新
   const htmlCodeTempVariable = componentProps.html
     ? `TempCodeHtml${componentName}`
     : `''`;
@@ -340,7 +318,6 @@ export const transformPreview = (
     );
   }
 
-  // 多文件展示
   const files = {
     vue: {} as Record<string, { code: string; filename: string }>,
     react: {} as Record<string, { code: string; filename: string }>,
@@ -402,12 +379,10 @@ export const transformPreview = (
           }
         }
       } catch (error) {
-        // 格式错误，则不展示该文件
       }
     }
   }
 
-  // 国际化
   let locale = '';
   if (config?.locale && typeof config.locale === 'object') {
     locale = encodeURIComponent(JSON.stringify(config.locale));

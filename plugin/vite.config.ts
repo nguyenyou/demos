@@ -4,7 +4,6 @@ import vue from '@vitejs/plugin-vue';
 import dts from 'vite-plugin-dts';
 
 export default defineConfig(() => {
-  // 判断是否是 --watch 模式
   const isWatchMode = process.argv.includes('--watch');
   
   return {

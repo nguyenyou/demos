@@ -6,9 +6,7 @@ const messageInstanceList: ComponentPublicInstance[] = [];
 
 const MessageService = {
   open: (content: string) => {
-    // 创建一个div元素
     const messageBox = document.createElement('div');
-    // 创建一个应用实例
     const messageApp = createApp(Message, {
       content,
       close: () => {

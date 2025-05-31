@@ -14,14 +14,14 @@ export type Locale = {
 };
 
 export const CN: LocaleText = {
-  openInStackblitz: '在 Stackblitz 中打开',
-  openInCodeSandbox: '在 Codesandbox 中打开',
-  openInGithub: '在 GitHub 中打开',
-  openInGitlab: '在 GitLub 中打开',
-  collapseCode: '收起代码',
-  expandCode: '展开代码',
-  copyCode: '复制代码',
-  copySuccess: '已将代码复制至剪切板！',
+  openInStackblitz: 'Open In Stackblitz',
+  openInCodeSandbox: 'Open In Codesandbox',
+  openInGithub: 'Open in GitHub',
+  openInGitlab: 'Open in GitLab',
+  collapseCode: 'Collapse Code',
+  expandCode: 'Expand Code',
+  copyCode: 'Copy Code',
+  copySuccess: 'The code has been copied to the clipboard!',
 };
 
 export const EN: LocaleText = {

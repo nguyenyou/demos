@@ -18,7 +18,6 @@ export const vitepressDemoPlugin = (
     self: Renderer
   ) => {
     const token = tokens[idx];
-    // 删除注释使注释的 demo 不生效
     token.content = token.content.replace(/<!--[\s\S]*?-->/g, '');
     if (demoReg.some((reg) => reg.test(token.content))) {
       return transformPreview(md, token, mdFile, params);
@@ -34,7 +33,6 @@ export const vitepressDemoPlugin = (
     self: Renderer
   ) => {
     const token = tokens[idx];
-    // 删除注释使注释的 demo 不生效
     token.content = token.content.replace(/<!--[\s\S]*?-->/g, '');
     if (demoReg.some((reg) => reg.test(token.content))) {
       return transformPreview(md, token, mdFile, params);

@@ -2,7 +2,7 @@ import pretty from 'pretty';
 
 interface HtmlTemplateProps {
   code?: string;
-  src?: string; // 需要 import 的资源
+  src?: string;
 }
 
 export function genHtmlTemplate(params?: HtmlTemplateProps) {
